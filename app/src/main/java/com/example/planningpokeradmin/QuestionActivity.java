@@ -31,7 +31,8 @@ public class QuestionActivity extends AppCompatActivity {
     String question;
     String code;
 
-    String items[] = new String[]{"alma","banan","kivi"};
+
+    static String items[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,36 +47,34 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 question = editTextQuestion.getText().toString();
-                myRef.child(code).child(question).child("1").setValue("");
-                myRef.child(code).child(question).child("2").setValue("");
-                myRef.child(code).child(question).child("3").setValue("");
-                myRef.child(code).child(question).child("4").setValue("");
-                myRef.child(code).child(question).child("5").setValue("");
-
+                myRef.child(code).child(question).setValue("");
             }
         });
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,items);
-        listView.setAdapter(adapter);
+        myRef.child("123").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String stringQuestion = dataSnapshot.getValue().toString();
+                String stringQu = stringQuestion.replace("{"," ");
+                String stringQu1 = stringQu.replace("}","");
+                String stringQu2 = stringQu1.replace("=","");
+                items = stringQu2.split(",");
+                ArrayAdapter<String> adapter = new ArrayAdapter<>(getApplicationContext(),android.R.layout.simple_list_item_1,items);
+                listView.setAdapter(adapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Log.d("kerdes",databaseError.toString());
+            }
+        });
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(),items[position],Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        myRef.child(question);
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String stringQuestion = dataSnapshot.getValue().toString();
-                Log.d("kerdes",stringQuestion);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
     }
