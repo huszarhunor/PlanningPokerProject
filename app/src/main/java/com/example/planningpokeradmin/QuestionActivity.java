@@ -47,11 +47,11 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 question = editTextQuestion.getText().toString();
-                myRef.child(code).child(question).setValue("");
+                myRef.child("Admin").child(code).child(question).setValue("");
             }
         });
 
-        myRef.child("123").addValueEventListener(new ValueEventListener() {
+        myRef.child("Admin").child("123").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 String stringQuestion = dataSnapshot.getValue().toString();
@@ -74,7 +74,13 @@ public class QuestionActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),items[position],Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),items[position],Toast.LENGTH_SHORT).show();
+                myRef.child("Aktiv").child("123").removeValue();
+                myRef.child("Aktiv").child("123").child(items[position]).child("1").setValue("");
+                myRef.child("Aktiv").child("123").child(items[position]).child("2").setValue("");
+                myRef.child("Aktiv").child("123").child(items[position]).child("3").setValue("");
+                myRef.child("Aktiv").child("123").child(items[position]).child("4").setValue("");
+                myRef.child("Aktiv").child("123").child(items[position]).child("5").setValue("");
             }
         });
     }
@@ -84,7 +90,7 @@ public class QuestionActivity extends AppCompatActivity {
         buttonSend = findViewById(R.id.buttonSend);
 
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("Admin");
+        myRef = database.getReference();
 
         listView = findViewById(R.id.listQuestions);
 
