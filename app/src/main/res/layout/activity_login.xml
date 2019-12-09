@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editTextCodeEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -25,9 +25,15 @@
             android:text="Room id" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/buttonRoomEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Enter in the room" />
+
+        <Button
+            android:id="@+id/buttonGoToRegistration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registration" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

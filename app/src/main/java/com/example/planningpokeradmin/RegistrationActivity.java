@@ -47,8 +47,5 @@ public class RegistrationActivity extends AppCompatActivity {
         editTextCode = findViewById(R.id.editTextCode);
         buttonCreate = findViewById(R.id.buttonCreate);
 
-        database = FirebaseDatabase.getInstance();
-        myRef = database.getReference("Admin");
-
     }
 }

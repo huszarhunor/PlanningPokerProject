@@ -34,5 +34,11 @@
             android:id="@+id/listQuestions"
             android:layout_width="375dp"
             android:layout_height="304dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View vote" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
