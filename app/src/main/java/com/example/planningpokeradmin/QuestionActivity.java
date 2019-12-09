@@ -27,6 +27,7 @@ public class QuestionActivity extends AppCompatActivity {
     EditText editTextQuestion;
     Button buttonSend;
     ListView listView;
+    Button buttonStatus;
 
     FirebaseDatabase database;
     DatabaseReference myRef;
@@ -91,6 +92,15 @@ public class QuestionActivity extends AppCompatActivity {
                 myRef.child("Aktiv").child(code).child("Kerdes").setValue(items[position]);
             }
         });
+
+        buttonStatus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), VoteStatusActivity.class);
+                intent.putExtra("codeString2",code);
+                startActivity(intent);
+            }
+        });
     }
 
     private void initialize() {
@@ -102,6 +112,8 @@ public class QuestionActivity extends AppCompatActivity {
         myRef2 = database.getReference();
 
         listView = findViewById(R.id.listQuestions);
+
+        buttonStatus = findViewById(R.id.buttonStatus);
 
     }
 

@@ -27,11 +27,10 @@ public class LoginActivity extends AppCompatActivity {
 
         initialize();
 
-        code = editTextCode.getText().toString();
-
         buttonEnter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                code = editTextCode.getText().toString();
                 Intent intent = new Intent(getApplicationContext(), QuestionActivity.class);
                 intent.putExtra("codeString",code);
                 startActivity(intent);

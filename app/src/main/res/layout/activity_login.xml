@@ -21,8 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Room id" />
+            android:hint="Room id"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/buttonRoomEnter"

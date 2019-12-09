@@ -21,8 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Question" />
+            android:hint="Tell a question"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/buttonSend"
@@ -36,7 +36,7 @@
             android:layout_height="304dp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/buttonStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="View vote" />
