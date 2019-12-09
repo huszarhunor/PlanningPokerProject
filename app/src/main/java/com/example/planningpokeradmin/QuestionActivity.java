@@ -54,6 +54,7 @@ public class QuestionActivity extends AppCompatActivity {
             public void onClick(View v) {
                 question = editTextQuestion.getText().toString();
                 myRef.child("Admin").child(code).child(question).setValue("");
+                Toast.makeText(getApplicationContext(),"Please activate your question!",Toast.LENGTH_SHORT).show();
                 click = true;
             }
         });
@@ -83,6 +84,7 @@ public class QuestionActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 //Toast.makeText(getApplicationContext(),items[position],Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"The vote has begun!",Toast.LENGTH_SHORT).show();
                 myRef.child("Aktiv").child(code).removeValue();
                 myRef.child("Aktiv").child(code).child("Szavazatok").child("1").setValue("");
                 myRef.child("Aktiv").child(code).child("Szavazatok").child("2").setValue("");
