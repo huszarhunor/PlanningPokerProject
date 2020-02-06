@@ -16,24 +16,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="217dp"
+            android:layout_height="130dp"
+            app:srcCompat="@drawable/konyv" />
+
         <EditText
             android:id="@+id/editTextCodeEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Room id"
+            android:hint="A szavazás kódja"
             android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/buttonRoomEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Enter in the room" />
+            android:text="Belépés" />
 
         <Button
             android:id="@+id/buttonGoToRegistration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registration" />
+            android:text="Registráció" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,13 +22,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Room id"
+            android:hint="Adjon meg egy kódot"
             android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/buttonCreate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Create room" />
+            android:text="Szavazás regisztrálása" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

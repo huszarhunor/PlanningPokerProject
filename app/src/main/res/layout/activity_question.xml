@@ -21,14 +21,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Tell a question"
+            android:hint="Tegyen fel egy kérést"
             android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/buttonSend"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Send" />
+            android:text="Kérdés küldése" />
 
         <ListView
             android:id="@+id/listQuestions"
@@ -39,6 +39,6 @@
             android:id="@+id/buttonStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="View vote" />
+            android:text="Eredmények megtekintése" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
